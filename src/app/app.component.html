@@ -1,0 +1,18 @@
+<div class="container">
+  <div class="title">
+    <h1>Monitoring zraka TK</h1>
+  </div>
+  <div class="content">
+    <nz-card class="left-card" nzTitle="MENI">
+      <ul nz-menu>
+        <li nz-menu-item [nzMatchRouter]="true" [routerLink]="['/city','Tuzla']" routerLinkActive="active">Tuzla</li>
+        <li nz-menu-item [nzMatchRouter]="true" [routerLink]="['/city','Lukavac']" >Lukavac</li>
+        <li nz-menu-item [nzMatchRouter]="true" [routerLink]="['/city','Zivinice']">Zivinice</li>
+      </ul>
+    </nz-card>
+    <div class="right-card">
+      <router-outlet></router-outlet>
+    </div>
+  </div>
+  <div class="bottom"><h3>developed with ❤️ by nakii using <a href="http://angular.io">Angular</a></h3></div>
+</div>

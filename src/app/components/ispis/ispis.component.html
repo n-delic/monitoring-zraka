@@ -1,0 +1,64 @@
+<nz-card [nzTitle]="currentStation.name | uppercase">
+  <div class="right-card-content">
+    <nz-card class="info">
+      <div class="info-content">
+        <div class="info-left">
+          <h1 id="emoji">
+            {{getEmoji()}}
+          </h1>
+          <h1>
+            {{getText()}}
+          </h1>
+        </div>
+        <div class="info-right">
+          <div class="info-test1">
+            <h3>TEMPERATURA</h3>
+            <h2>{{data.temperature}}°C</h2>
+            <h3>PRITISAK</h3>
+            <h2>{{data.pressure}}mBar</h2>
+            </div>
+          <div class="info-test2">
+            <h3>VLAZNOST</h3>
+            <h2>{{data.humidity}}%</h2>
+            <h3>BRZINA VJETRA</h3>
+            <h2>{{data.wind}}m/s</h2>
+          </div>
+        </div>
+      </div>
+    </nz-card>
+
+    <nz-card class="pm25">
+      <nz-statistic
+            [nzValue]="data.pm25"
+            [nzTitle]="'PM 2.5'"
+            [nzSuffix]="'µg/m³'"
+            [nzValueStyle]="{ color: '#3F8600' }"
+          ></nz-statistic>
+    </nz-card>
+    <nz-card class="pm10">
+      <nz-statistic
+            [nzValue]="data.pm10"
+            [nzTitle]="'PM10'"
+            [nzSuffix]="'µg/m³'"
+            [nzValueStyle]="{ color: '#3F8600' }"
+          ></nz-statistic>
+    </nz-card>
+    <nz-card class="so2">
+      <nz-statistic
+            [nzValue]="data.so2"
+            [nzTitle]="'SO2'"
+            [nzSuffix]="'µg/m³'"
+            [nzValueStyle]="{ color: '#3F8600' }"
+          ></nz-statistic>
+    </nz-card>
+    <nz-card class="no2">
+      <nz-statistic
+            [nzValue]="data.no2"
+            [nzTitle]="'NO2'"
+            [nzSuffix]="'µg/m³'"
+            [nzValueStyle]="{ color: '#3F8600' }"
+          ></nz-statistic>
+    </nz-card>
+  </div>
+
+</nz-card>

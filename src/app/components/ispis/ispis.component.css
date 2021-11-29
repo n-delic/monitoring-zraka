@@ -1,0 +1,103 @@
+.right-card-content {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr .5fr .5fr;
+  grid-template-areas:
+    "info info"
+    "pm25 pm10"
+    "so2 no2";
+}
+
+.info {
+  grid-area: info;
+}
+
+.info-content {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-areas: "info-left info-right";
+}
+
+.info-left {
+  grid-area: info-left;
+}
+
+.info-right {
+/* margin: auto 0; */
+padding: 5%;
+  grid-area: info-right;
+}
+.info-test1 {
+  position: relative;
+  float: left;
+}
+.info-test2 {
+  position: relative;
+  float:  right;
+  text-align: right;
+}
+
+#emoji {
+  font-size: 5rem;
+  margin: 0;
+}
+
+.pm25 {
+  grid-area: pm25;
+}
+
+.pm10 {
+  grid-area: pm10;
+}
+
+.so2 {
+  grid-area: so2;
+}
+
+.no2 {
+  grid-area: no2;
+}
+
+@media screen and (max-width: 1760px) {
+  .info-content {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 0.5fr 1fr;
+    grid-template-areas: "info-left"
+                          "info-right";
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .right-card-content {
+    grid-template-columns: 1fr;
+    grid-template-rows: 2fr 0.2fr 0.2fr 0.2fr 0.2fr;
+    grid-template-areas:
+      "info"
+      "pm25"
+      "pm10"
+      "so2"
+      "no2";
+  }
+  .info-content {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 0.5fr 1fr;
+    grid-template-areas: "info-left"
+                          "info-right";
+  }
+  .info-right {
+    margin: 0 auto;
+  }
+  .info-test1 {
+    position: relative;
+    text-align: center;
+    float:none;
+  }
+  .info-test2 {
+    position: relative;
+    float: none;
+    text-align: center;
+  }
+
+}
