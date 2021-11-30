@@ -16,7 +16,9 @@ export class IspisComponent implements OnInit, OnDestroy {
   data: Data = new Data();
   stations: Array<Station> = [
     {name: 'Zivinice', id: 9323},
-    {name: 'Tuzla',id:9320},
+    {name: 'Tuzla/BKC',id:9320},
+    {name: 'Tuzla/Skver', id:9319},
+    {name: 'Tuzla/Bukinje',id:9321},
     {name: 'Lukavac', id: 9322}
   ];
   thresholds: Thresholds = new Thresholds();

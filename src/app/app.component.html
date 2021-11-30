@@ -4,13 +4,13 @@
   </div>
   <div class="content">
     <nz-card class="left-card" nzTitle="MENI">
-      <ul nz-menu>
+      <ul nz-menu nzMode="inline">
         <!-- <li nz-menu-item [nzMatchRouter]="true" [routerLink]="['/city','Tuzla']" routerLinkActive="active">Tuzla</li> -->
-        <li nz-submenu nzTitle="Tuzla" >
+        <li nz-submenu nzTitle="Tuzla">
           <ul>
-            <li nz-submenu-item  [routerLink]="['/city','Tuzla']">Skver</li>
-            <li nz-submenu-item>Bukinje</li>
-            <li nz-submenu-item>BKC</li>
+            <li nz-menu-item  [routerLink]="['/city','Tuzla/Skver']">Skver</li>
+            <li nz-menu-item [routerLink]="['/city','Tuzla/Bukinje']">Bukinje</li>
+            <li nz-menu-item [routerLink]="['/city','Tuzla/BKC']">BKC</li>
           </ul>
         </li>
 
