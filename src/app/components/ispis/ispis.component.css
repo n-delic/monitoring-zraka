@@ -1,5 +1,6 @@
 .right-card-content {
   display: grid;
+  grid-gap: 0.5rem;
   grid-template-columns: 1fr 1fr;
   grid-template-rows: 1fr .5fr .5fr;
   grid-template-areas:
@@ -19,6 +20,7 @@
 }
 
 .info-left {
+  text-align: center;
   grid-area: info-left;
 }
 
@@ -31,14 +33,14 @@ padding: 5%;
   position: relative;
   float: left;
 }
-.info-test2 {
-  position: relative;
-  float:  right;
-  text-align: right;
+
+.info-test1 h2 {
+  display: inline;
 }
 
+
 #emoji {
-  font-size: 5rem;
+  font-size: 6rem;
   margin: 0;
 }
 
@@ -94,10 +96,6 @@ padding: 5%;
     text-align: center;
     float:none;
   }
-  .info-test2 {
-    position: relative;
-    float: none;
-    text-align: center;
-  }
+
 
 }

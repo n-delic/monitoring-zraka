@@ -8,4 +8,5 @@ export class Data {
   so2: number = 0;
   no2: number = 0;
   aqi: number = 0;
+
 }

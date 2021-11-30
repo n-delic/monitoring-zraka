@@ -5,7 +5,15 @@
   <div class="content">
     <nz-card class="left-card" nzTitle="MENI">
       <ul nz-menu>
-        <li nz-menu-item [nzMatchRouter]="true" [routerLink]="['/city','Tuzla']" routerLinkActive="active">Tuzla</li>
+        <!-- <li nz-menu-item [nzMatchRouter]="true" [routerLink]="['/city','Tuzla']" routerLinkActive="active">Tuzla</li> -->
+        <li nz-submenu nzTitle="Tuzla" >
+          <ul>
+            <li nz-submenu-item  [routerLink]="['/city','Tuzla']">Skver</li>
+            <li nz-submenu-item>Bukinje</li>
+            <li nz-submenu-item>BKC</li>
+          </ul>
+        </li>
+
         <li nz-menu-item [nzMatchRouter]="true" [routerLink]="['/city','Lukavac']" >Lukavac</li>
         <li nz-menu-item [nzMatchRouter]="true" [routerLink]="['/city','Zivinice']">Zivinice</li>
       </ul>

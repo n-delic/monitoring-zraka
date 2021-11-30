@@ -1,9 +1,11 @@
+import { Thresholds } from './../../models/thresholds';
 import { ActivatedRoute } from '@angular/router';
 import { ApiConnectService } from './../../services/api-connect.service';
 import { Component, HostListener, OnDestroy, OnInit } from '@angular/core';
 import { Data } from 'src/app/models/data';
 import { Station } from 'src/app/models/station';
 import { Subscription } from 'rxjs';
+import { NgStyleInterface } from 'ng-zorro-antd/core/types';
 
 @Component({
   selector: 'app-ispis',
@@ -17,7 +19,7 @@ export class IspisComponent implements OnInit, OnDestroy {
     {name: 'Tuzla',id:9320},
     {name: 'Lukavac', id: 9322}
   ];
-
+  thresholds: Thresholds = new Thresholds();
   currentStation!: Station;
   connectt!: Subscription;
   acrs!: Subscription;
@@ -56,18 +58,31 @@ export class IspisComponent implements OnInit, OnDestroy {
 
   getEmoji() : string {
     if(this.data.aqi < 50) {
-      return ':)';
-    } else if(this.data.aqi > 51) {
-      return ':|';
+      return '😺';
+    } else if(this.data.aqi > 51 && this.data.aqi < 101) {
+      return '🙀';
     } else {
-      return ':(';
+      return '😾';
     }
+  }
+
+  getColor(value: number,measure: string) : NgStyleInterface {
+    for(let thres of this.thresholds.thresholds) {
+      if(measure == thres.name) {
+        for(let i = 0; i< thres.data.length;++i) {
+          if(value < thres.data[i].value) {
+            return { color: thres.data[i].color };
+          }
+        }
+      }
+    }
+    return { color: '#000000' };
   }
 
   getText() : string {
     if(this.data.aqi < 50) {
       return 'Cist';
-    } else if(this.data.aqi > 51) {
+    } else if(this.data.aqi > 51 && this.data.aqi < 101) {
       return 'Umjereno zagaden';
     } else {
       return 'Zagaden';
