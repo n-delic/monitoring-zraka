@@ -2,7 +2,7 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 
-const token = '8dbc20f099927fb102dbb2d7c23636675fb74f49';
+const token = '';
 
 @Injectable({
   providedIn: 'root'
